@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>my cv</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.fullPage.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/resume.css'%}" />
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="{% static 'vendors/scrolloverflow.js' %}"></script>
+
+	<script type="text/javascript" src="{% static 'js/jquery.fullPage.js' %}"></script>
+
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['personalIntroduce', 'projectExperience1', 'projectExperience2', 'projectExperience3'],
+				scrollBar: true,
+
+                scrollingSpeed: 500,
+                navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
+
+                onLeave: function(index, nextIndex, direction){
+				    var $personal = $('#personal_introduce, #personal_skill');
+				    var $one_duty = $('#work_one_introduce, #work_one_duty');
+				    var $one_struct = $('#work_one_struct');
+				    var $two_view = $('#work_two_introduce, #work_two_struct, #work_two_duty');
+				    var $three_view = $('#work_three_introduce, #work_three_struct, #work_three_duty');
+				    var element = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
+
+                    if (nextIndex == 1){
+                        $personal.addClass('animated zoomIn').one(element, function () {
+                            $personal.removeClass('animated zoomIn');
+                        });
+                    }else if(nextIndex == 2){
+                        $one_duty.addClass('animated slideInLeft').one(element, function () {
+                            $one_duty.removeClass('animated slideInLeft');
+                        });
+                        $one_struct.addClass('animated slideInRight').one(element, function () {
+                            $one_struct.removeClass('animated slideInRight');
+                        });
+                    }else if(nextIndex == 3){
+                        $two_view.addClass('animated pulse').one(element, function () {
+                            $two_view.removeClass('animated pulse');
+                        });
+                    }else if(nextIndex == 4){
+                        $three_view.addClass('animated lightSpeedIn').one(element, function () {
+                            $three_view.removeClass('animated lightSpeedIn');
+                        });
+                    }
+                },
+                afterLoad: function(anchorLink, index){
+                    var element = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
+                    var $personal = $('#personal_introduce, #personal_skill');
+                    if (index == 1){
+                        $personal.addClass('animated zoomIn').one(element, function () {
+                            $personal.removeClass('animated zoomIn');
+                        });
+                    }
+                }
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section " id="section0">
+        <div class="center">
+            <div id="personal_introduce">
+                <h3>个人简介</h3>
+                <div><strong>姓名:</strong>何正健 | <strong>性别:</strong>男</div>
+                <div><strong>手机号:</strong>15866799757 | <strong>邮箱:</strong>hzj7510@163.com</div>
+                <div><strong>工作经验:</strong>2年 | <strong>学历:</strong>本科 | <strong>学校:</strong>滨州学院</div>
+            </div>
+        </div>
+        <div class="center">
+            <div id="personal_skill">
+                    <h3>个人技能</h3>
+                    <div>能够熟练的使用Objective-C、Swift语言编程，使用OC和Swift混编iOS App应用程序；</div>
+                    <div>熟练掌握iOS主流界面布局设计，基本控件和自定义控件的使用，事件处理及事件分发机制；</div>
+                    <div>熟练掌握工厂、代理、观察者、单例等多种设计模式；</div>
+                    <div>熟练的使用多线程技术，网络编程技术等；</div>
+                    <div>熟练掌握iOS组件的原理和使用，JSON、XML数据解析，数据存储，数据缓存；</div>
+                    <div>熟练掌握地图定位，附近搜索，线路查寻，轨迹绘制和基于地图的高级自定义控件开发；</div>
+                    <div>熟练掌握iOS消息通知的推送机制和使用；</div>
+                    <div>熟练掌握正则表达式的使用；</div>
+                    <div>能够完成支付宝、微信等支付功能集成，完成整个支付流程；</div>
+                    <div>熟练掌握知名第三方类库的使用，AFNetworking、Alamofire网络数据请求，SDWebImage网络图片下载缓存，umeng第三方登陆、分享和消息推送，MJRefresh数据刷新，Masonry控件约束设置等；</div>
+                    <div>熟悉项目托管与团队协作开发平台工具Git；</div>
+                    <div>能够独立的完成程序的发布，分析应用的状态，并懂得如何处理苹果官方的审核拒绝；</div>
+                    <div>熟悉软件工程的流程，需求与可行性分析，系统概要设计、详细设计、编码实现、测试等过程；</div>
+                    <div>&nbsp;</div>
+                    <div>拥有自己的技术博客，平时还经常上一些技术网站帮助他人解决一些问题；</div>
+                    <div>GitHub拥有自己上传作品；</div>
+                </div>
+            </div>
+	</div>
+
+	<div class="section" id="section1">
+        <div class="center">
+            <div id="work_one_introduce">
+                <h3>项目经历</h3>
+                <p>2016.10 - 至今   <strong>公司产品  iOS开发工程师</strong></p>
+                <p><strong>项目描述:</strong>公司产品是公司想要做一个电商APP的一个基础功能产品，可以方便添加或删除需求。</p>
+            </div>
+            <div id="work_one_struct">
+                <h4>项目架构:</h4>
+                <div>1.项目整体采用MVVM模式模式。</div>
+                <div>2.项目使用reactiveCocoa来实现ViewModel与View之间的相互绑定。</div>
+                <div>3.网络请求使用AFNetworking，配合MJExtension实现异步网络请求与数据解析。</div>
+                <div>4.项目实现后台数据来动态调整view显示。</div>
+            </div>
+            <div id="work_one_duty">
+                <h4>项目负责:</h4>
+                <div>1、负责整体MVVM框架搭建。</div>
+                <div>2、用reactiveCocoa实现ViewModel与View数据绑定的实现。</div>
+                <div>3、负责项目商品详情页面动态实现的设计讨论与代码实现。</div>
+                <div>4、负责项目首页后台与前段数据绑定的设计与代码实现。</div>
+                <div>5、负责项目支付流程的讨论。</div>
+            </div>
+        </div>
+	</div>
+
+	<div class="section" id="section2">
+		<div class="center">
+            <div id="work_two_introduce">
+                <h3>项目经历</h3>
+                <p>2016.05 - 2016.10   <strong>万国惠app  iOS开发工程师</strong></p>
+                <p><strong>项目描述:</strong>万国惠跨境电商app，是天御（大连）电子商务有限公司旗下电商项目,致力于为消费者提供全都有、特别省、极速到的海外购物服务。</p>
+            </div>
+            <div id="work_two_struct">
+                <h4>项目架构:</h4>
+                <div>1.项目采用了MVC框架模式。</div>
+                <div>2.主体View采用Masonry纯代码编程。</div>
+                <div>3.项目使用云巴完成客服功能的开发。</div>
+                <div>4.项目使用reactivecocoa实现控件事件处理，与事件监听。</div>
+            </div>
+            <div id="work_two_duty">
+                <h4>项目负责:</h4>
+                <div>1、负责中负责项目的迭代与版本更新。</div>
+                <div>2、负责首页改版界面开发。</div>
+                <div>3、负责对接云巴api完成客服功能的开发。</div>
+                <div>4、集成了第三方分享、第三方登录、融智付等sdk。</div>
+                <div>5、负责订单界面确认订单功能的开发。</div>
+                <div>6、负责搜索模块的开发。</div>
+                <div>7、负责搜索功能的优化，实现2秒内不输入自动搜索。</div>
+                <div>8、负责版本更新功能的开发。</div>
+            </div>
+        </div>
+        <div class="div_session">
+            <img id="work_two_img_one"/>
+            <img id="work_two_img_two"/>
+        </div>
+	</div>
+
+    <div class="section" id="section3">
+		<div class="center">
+            <div id="work_three_introduce">
+                <h3>项目经历</h3>
+                <p>2015.11 - 2016.06   <strong>集洋百货  iOS开发工程师</strong></p>
+                <p><strong>项目描述:</strong>集洋百货，是广东西邮寄网络科技有限公司旗下的跨境商城项目。</p>
+            </div>
+            <div id="work_three_struct">
+                <h4>项目架构:</h4>
+                <div>1.项目采用了MVC框架模式。</div>
+                <div>2.主体View采用Masonry纯代码编程。</div>
+                <div>3.网络请求架构使用AFNetworking,配合MJExtension实现异步处理与网络请求。</div>
+                <div>4.项目图片处理使用SDWebImage实现本地存储，减缓图片请求压力。</div>
+                <div>5.项目使用reactivecocoa来避免Block引发的内存泄露与数据传输。</div>
+            </div>
+            <div id="work_three_duty">
+                <h4>项目负责:</h4>
+                <div>1、负责项目商品详情页的开发。</div>
+                <div>2、负责项目手机支付宝支付、微信支付的开发。</div>
+                <div>3、负责购物车界面与功能的开发。</div>
+                <div>4、负责项目订单界面的开发。</div>
+                <div>5、负责我的界面开发。</div>
+            </div>
+        </div>
+
+	</div>
+</div>
+
+</body>
+</html>

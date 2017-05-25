@@ -295,6 +295,11 @@ class UserMessagesView(LoginRequiredMixin, View):
         })
 
 
+class MyResumeView(View):
+    def get(self, request):
+        return render(request, 'resume.html', {})
+
+
 def page_not_found(request):
     from django.shortcuts import render_to_response
     response = render_to_response('404.html', {})
