@@ -1,0 +1,32 @@
+{% extends 'base-login-register.html' %}
+
+{% block title %}鲸之网，在线平台！{% endblock %}
+
+{% block phone_num %}66666666{% endblock %}
+
+{% block islogin_active %}
+    <li><a href="{% url 'users:login' %}">[登录]</a></li>
+    <li class="active"><a href="{% url 'users:forgetPwd' %}">[忘记密码]</a></li>
+{% endblock %}
+
+{% block form_box %}
+    <div class="fl form-box">
+                <h2>忘记密码</h2>
+                <form id="jsFindPwdForm" method="post" action="{% url 'users:forgetPwd' %}" autocomplete="off">
+                    <div class="form-group marb20 {% if error.email %}errrorput{% endif %}">
+                        <label>帐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</label>
+                        <input type="text" id="account" name="email" value="{{ form.email.value }}" placeholder="邮箱" />
+                    </div>
+                    <div class="form-group captcha1 marb38 {% if error.captcha %}errrorput{% endif %}">
+                        <label>验&nbsp;证&nbsp;码</label>
+                        {{ form.captcha }}
+
+                    </div>
+                    <div class="error btns" id="jsForgetTips">{% for key,value in error.items %}{{ value }}{% endfor %}</div>
+                    <input type="hidden" name="sms_type" value="1">
+                    <input class="btn btn-green" id="jsFindPwdBtn" type="submit" value="提交" />
+                    <p class="form-p" style="bottom:40px;">您还可以<a href="{% url 'users:login' %}"> [直接登录]</a></p>
+                    {% csrf_token %}
+                </form>
+            </div>
+{% endblock %}
