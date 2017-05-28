@@ -154,7 +154,7 @@ class ResetPasswordView(View):
 
 class IndexView(View):
     def get(self, request):
-        index_courses = Course.objects.all().order_by('-add_time')[:6]
+        index_courses = Course.objects.all().order_by('-add_time')[:4]
         index_orgs = CourseOrg.objects.all()[:15]
         home_banners = Banner.objects.filter(type='homeBanner')
         model_banners = Banner.objects.filter(type='modelBanner')

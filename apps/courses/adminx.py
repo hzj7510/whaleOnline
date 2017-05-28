@@ -15,7 +15,7 @@ class CourseSourceInline(object):
 
 
 class CourseAdmin(object):
-    list_display = ['name', 'desc', 'detail', 'learn_times', 'students', 'fav_nums', 'get_lesson_count', 'go_to']
+    list_display = ['name', 'desc', 'detail', 'learn_times', 'students', 'fav_nums','get_lesson_count', 'go_to']
     list_filter = ['name', 'desc', 'detail', 'learn_times', 'students', 'fav_nums']
     search_fields = ['name', 'desc', 'detail', 'learn_times', 'students', 'fav_nums']
     inlines = [LessonInline, CourseSourceInline]
