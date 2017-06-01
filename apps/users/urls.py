@@ -2,7 +2,7 @@
 from django.conf.urls import url
 
 from .views import LoginView, LogoutView, RegisterView, ForgetPasswordView, ResetPasswordView, UserInfoView, UserUploadAvatarView, UserUpdatePwdView, UserUpdateSendEmailView, UserUpdateEmailView, UserUpdateInfoView
-from .views import UserMyCourseView, UserFavView, UserMessagesView, MyResumeView
+from .views import UserMyCourseView, UserFavView, UserMessagesView, MyResumeView, MyResumePythonView
 
 urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name='login'),
@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^fav/(?P<fav_type>\d+)/$', UserFavView.as_view(), name='fav'),
     url(r'^message/$', UserMessagesView.as_view(), name='message'),
     url(r'^resume/$', MyResumeView.as_view(), name='resume'),
+    url(r'^resume/python$', MyResumePythonView.as_view(), name='resume_python'),
 ]

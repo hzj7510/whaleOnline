@@ -44,7 +44,9 @@
 				    var $two_view = $('#work_two_introduce, #work_two_struct, #work_two_duty');
 				    var $three_view = $('#work_three_introduce, #work_three_struct, #work_three_duty');
 				    var $fourth_view = $('#work_fourth_introduce, #work_fourth_struct, #work_fourth_duty');
-				    var $fifth_view = $('#work_fifth_introduce, #work_fifth_struct');
+				    var $fifth_view = $('#work_fifth_introduce, #work_fifth_struct, #work_fifth_duty');
+				    var $six_view = $('#work_six_introduce, #work_six_struct, #work_six_duty');
+				    var $seven_view = $('#work_seven_introduce, #work_seven_struct');
 				    var element = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
 
                     if (nextIndex == 1){
@@ -73,6 +75,14 @@
                     }else if(nextIndex == 6){
                         $fifth_view.addClass('animated slideInRight').one(element, function () {
                             $fifth_view.removeClass('animated slideInRight');
+                        });
+                    }else if(nextIndex == 7){
+                        $six_view.addClass('animated slideInLeft').one(element, function () {
+                            $six_view.removeClass('animated slideInLeft');
+                        });
+                    }else if(nextIndex == 8){
+                        $seven_view.addClass('animated zoomIn').one(element, function () {
+                            $seven_view.removeClass('animated zoomIn');
                         });
                     }
                 },
@@ -104,35 +114,35 @@
         </div>
         <div class="center">
             <div id="personal_skill">
-                    <h3>个人技能</h3>
-                    <h4>iOS技能</h4>
-                    <div>能够熟练的使用Objective-C、Swift语言编程，使用OC和Swift混编iOS App应用程序；</div>
-                    <div>熟练掌握iOS主流界面布局设计，基本控件和自定义控件的使用，事件处理及事件分发机制；</div>
-                    <div>熟练掌握工厂、代理、观察者、单例等多种设计模式；</div>
-                    <div>熟练的使用多线程技术，网络编程技术等；</div>
-                    <div>熟练掌握地图定位，附近搜索，线路查寻，轨迹绘制和基于地图的高级自定义控件开发；</div>
-                    <div>熟练掌握iOS消息通知的推送机制和使用；</div>
-                    <div>能够完成支付宝、微信等支付功能集成，完成整个支付流程；</div>
-                    <div>熟练掌握知名第三方类库的使用，AFNetworking、Alamofire网络数据请求，SDWebImage网络图片下载缓存，umeng第三方登陆、分享和消息推送，MJRefresh数据刷新，Masonry控件约束设置等；</div>
-                    <div>熟悉项目托管与团队协作开发平台工具Git；</div>
-                    <div>能够独立的完成程序的发布，分析应用的状态，并懂得如何处理苹果官方的审核拒绝；</div>
-                    <h4>python技能</h4>
-                    <div>熟练使用python</div>
-                    <div>熟悉使用django开发web</div>
-                    <p></p>
-                    <div>拥有自己的技术博客，平时还经常上一些技术网站帮助他人解决一些问题；</div>
-                    <div>GitHub拥有自己上传作品；</div>
-                </div>
+                <h3>个人技能</h3>
+                <h4>python技能</h4>
+                <div>熟练使用python</div>
+                <div>熟悉python第三方库，如requests,scrapy,matplotlib,numpy等</div>
+                <div>熟练使用django开发web</div>
+                <div>熟悉python虚拟环境virtualenv与virtualenvwrapper</div>
+                <div>了解css,html,js</div>
+                <h4>iOS技能</h4>
+                <div>能够熟练的使用Objective-C、Swift语言编程，使用OC和Swift混编iOS App应用程序；</div>
+                <div>熟练掌握iOS主流界面布局设计，基本控件和自定义控件的使用，事件处理及事件分发机制；</div>
+                <div>熟练掌握工厂、代理、观察者、单例等多种设计模式；</div>
+                <div>熟练的使用多线程技术，网络编程技术等；</div>
+                <div>熟练掌握iOS消息通知的推送机制和使用；</div>
+                <div>能够完成支付宝、微信等支付功能集成，完成整个支付流程；</div>
+                <div>熟练掌握知名第三方类库的使用，AFNetworking、Alamofire网络数据请求，SDWebImage网络图片下载缓存，umeng第三方登陆、分享和消息推送，MJRefresh数据刷新，Masonry控件约束设置等；</div>
+                <p></p>
+                <div>拥有自己的技术博客，平时还经常上一些技术网站帮助他人解决一些问题；</div>
+                <div>GitHub拥有自己上传作品；</div>
             </div>
+        </div>
 	</div>
 
     <div class="section" id="section1">
 		<div class="center">
             <div id="work_one_introduce">
                 <h3>项目经历</h3>
-                <p>2017.03 - 至今   <strong>Python视频后台管理系统</strong></p>
+                <p>2017.03 - 至今   <strong>Python视频后台管理系统  Python开发工程师</strong></p>
                 <p><strong>项目描述:</strong>实现一套完整的视频web开发，包括机构、课程、用户操作、用户管理等模块，视频播放，用户收藏等功能以及后台管理系统。</p>
-		<a href="http://www.hezhengjian.com" target="_blank">项目地址</a>
+                <a href="www.hezhengjian.com" target="_blank">项目地址</a>
             </div>
             <div id="work_one_struct">
                 <h4>项目架构:</h4>
@@ -160,17 +170,68 @@
         <div class="center">
             <div id="work_two_introduce">
                 <h3>项目经历</h3>
+                <p>2017.02 - 2017.03   <strong>抓取智联招聘信息</strong></p>
+                <p><strong>项目描述:</strong>抓取智联招聘信息，分析每个城市，某一行业的招聘信息情况，招聘数量与招聘薪资</p>
+                <a href="https://github.com/hzj7510/Zhilian_Spider" target="_blank">点这里可以查看源码</a>
+            </div>
+            <div id="work_two_struct">
+                <h4>项目架构:</h4>
+                <div>1.项目整体使用scrapy框架。</div>
+                <div>2.项目使用xpath对数据进行解析</div>
+                <div>3.项目使用pandas对数据进行处理。</div>
+                <div>4.项目使用matplotlib对数据结果进行绘图展示。</div>
+            </div>
+            <div id="work_two_duty">
+                <h4>项目负责:</h4>
+                <div>1、负责使用xpath对数据进行解析。</div>
+                <div>2、负责使用items对数据进行保存</div>
+                <div>3、负责使用pipeline对数据进行再分析。</div>
+                <div>4、负责使用pandas对数据去重以及对数据进行分组。</div>
+                <div>5、负责使用matplotlib对数据进行展示。</div>
+            </div>
+        </div>
+	</div>
+
+    <div class="section" id="section3">
+        <div class="center">
+            <div id="work_three_introduce">
+                <h3>项目经历</h3>
+                <p>2016.10 - 2017.01    <strong>迅雷美图抓取</strong></p>
+                <p><strong>项目描述:</strong>通过迅雷美图漏洞抓取迅雷美图信息</p>
+            </div>
+            <div id="work_three_struct">
+                <h4>项目架构:</h4>
+                <div>1.项目使用requests处理网络请求。</div>
+                <div>2.项目使用re正则匹配+json对数据进行解析</div>
+                <div>3.项目使用file对文件进行存储。</div>
+                <div>4.项目使用迭代器实现对数据的遍历。</div>
+            </div>
+            <div id="work_three_duty">
+                <h4>项目负责:</h4>
+                <div>1、负责使用requests进行数据请求，数据获取。</div>
+                <div>2、负责使用re正则表达式获取列表中的数据</div>
+                <div>3、负责使用json解析列表中的数据。</div>
+                <div>4、负责使用open进行文件操作。</div>
+                <div>5、负责使用yield对数据进行遍历。</div>
+            </div>
+        </div>
+	</div>
+
+    <div class="section" id="section4">
+        <div class="center">
+            <div id="work_fourth_introduce">
+                <h3>项目经历</h3>
                 <p>2016.10 - 2017.至今    <strong>B2C跨境电商产品  iOS开发工程师</strong></p>
                 <p><strong>项目描述:</strong>公司根据累积的项目经验及产品经理设计,进行B2C跨境电商自有产品开发。旨在作为公司后续产品推广、销售及客户需求个性化定制基础项目。</p>
             </div>
-            <div id="work_two_struct">
+            <div id="work_fourth_struct">
                 <h4>项目架构:</h4>
                 <div>1.项目整体采用MVVM模式模式。</div>
                 <div>2.项目使用reactiveCocoa来实现ViewModel与View之间的相互绑定。</div>
                 <div>3.网络请求使用AFNetworking，配合MJExtension实现异步网络请求与数据解析。</div>
                 <div>4.项目实现后台数据来动态调整view显示。</div>
             </div>
-            <div id="work_two_duty">
+            <div id="work_fourth_duty">
                 <h4>项目负责:</h4>
                 <div>1、负责整体MVVM框架搭建。</div>
                 <div>2、用reactiveCocoa实现ViewModel与View数据绑定的实现。</div>
@@ -182,22 +243,22 @@
         </div>
 	</div>
 
-	<div class="section" id="section3">
+	<div class="section" id="section5">
 		<div class="center">
-            <div id="work_three_introduce">
+            <div id="work_fifth_introduce">
                 <h3>项目经历</h3>
                 <p>2016.05 - 2016.10   <strong>万国惠app  iOS开发工程师</strong></p>
                 <p><strong>项目描述:</strong>万国惠跨境电商app，是天御（大连）电子商务有限公司旗下电商项目,致力于为消费者提供全都有、特别省、极速到的海外购物服务。</p>
-		<a href="https://itunes.apple.com/cn/app/%E4%B8%87%E5%9B%BD%E6%83%A0/id1183618279?mt=8&ign-mpt=uo%3D4" target="_blank">点这里可以下载哦</a>
+                <a href="https://itunes.apple.com/cn/app/%E4%B8%87%E5%9B%BD%E6%83%A0/id1183618279?mt=8&ign-mpt=uo%3D4" target="_blank">点这里可以下载哦</a>
             </div>
-            <div id="work_three_struct">
+            <div id="work_fifth_struct">
                 <h4>项目架构:</h4>
                 <div>1.项目采用了MVC框架模式。</div>
                 <div>2.主体View采用Masonry纯代码编程。</div>
                 <div>3.项目使用云巴完成客服功能的开发。</div>
                 <div>4.项目使用reactivecocoa实现控件事件处理，与事件监听。</div>
             </div>
-            <div id="work_three_duty">
+            <div id="work_fifth_duty">
                 <h4>项目负责:</h4>
                 <div>1、负责中负责项目的迭代与版本更新。</div>
                 <div>2、负责首页改版界面开发。</div>
@@ -215,15 +276,15 @@
         </div>
 	</div>
 
-    <div class="section" id="section4">
+    <div class="section" id="section6">
 		<div class="center">
-            <div id="work_fourth_introduce">
+            <div id="work_six_introduce">
                 <h3>项目经历</h3>
                 <p>2015.11 - 2016.06   <strong>集洋百货  iOS开发工程师</strong></p>
                 <p><strong>项目描述:</strong>集洋百货，是广东西邮寄网络科技有限公司旗下的跨境商城项目。</p>
-		<a href="https://itunes.apple.com/cn/app/ji-yangshops/id1106921115?mt=8" target="_blank">点击这里可以下载哦</a>
+                <a href="https://itunes.apple.com/cn/app/ji-yangshops/id1106921115?mt=8" target="_blank">点击这里可以下载哦</a>
             </div>
-            <div id="work_fourth_struct">
+            <div id="work_six_struct">
                 <h4>项目架构:</h4>
                 <div>1.项目采用了MVC框架模式。</div>
                 <div>2.主体View采用Masonry纯代码编程。</div>
@@ -231,7 +292,7 @@
                 <div>4.项目图片处理使用SDWebImage实现本地存储，减缓图片请求压力。</div>
                 <div>5.项目使用reactivecocoa来避免Block引发的内存泄露与数据传输。</div>
             </div>
-            <div id="work_fourth_duty">
+            <div id="work_six_duty">
                 <h4>项目负责:</h4>
                 <div>1、负责项目商品详情页的开发。</div>
                 <div>2、负责项目手机支付宝支付、微信支付的开发。</div>
@@ -243,16 +304,16 @@
 
 	</div>
 
-    <div class="section" id="section5">
+    <div class="section" id="section7">
 		<div class="center">
-            <div id="work_fifth_introduce">
+            <div id="work_seven_introduce">
                 <h4>个人评价:</h4>
-                <div>2年ios开发经验,热爱编程</div>
+                <div>2年ios开发经验,半年python开发经验,热爱编程</div>
 		<div>学习能力强,自学python爬虫及web开发</div>
                 <div>喜欢运动，热爱跑步</div>
                 <div>喜欢音乐，自学吉他ing</div>
             </div>
-            <div id="work_fifth_struct">
+            <div id="work_seven_struct">
                 <h3>感谢观看</h3>
             </div>
         </div>

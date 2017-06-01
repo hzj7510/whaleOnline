@@ -299,6 +299,9 @@ class MyResumeView(View):
     def get(self, request):
         return render(request, 'resume.html', {})
 
+class MyResumePythonView(View):
+    def get(self, request):
+        return render(request, 'resume-python.html', {})
 
 def page_not_found(request):
     from django.shortcuts import render_to_response
