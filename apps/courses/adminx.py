@@ -19,7 +19,7 @@ class CourseAdmin(object):
     list_filter = ['name', 'desc', 'detail', 'learn_times', 'students', 'fav_nums']
     search_fields = ['name', 'desc', 'detail', 'learn_times', 'students', 'fav_nums']
     inlines = [LessonInline, CourseSourceInline]
-    list_editable = ['desc', 'detail']
+    list_editable = ['desc']
     refresh_times = [3, 5]
     style_fields = {'detail': 'ueditor'}
 
@@ -29,6 +29,7 @@ class BannerCourseAdmin(object):
     list_filter = ['name', 'desc', 'detail', 'learn_times', 'students', 'fav_nums']
     search_fields = ['name', 'desc', 'detail', 'learn_times', 'students', 'fav_nums']
     inlines = [LessonInline, CourseSourceInline]
+    style_fields = {'detail': 'ueditor'}
 
     def queryset(self):
         qs = super(BannerCourseAdmin, self).queryset()
